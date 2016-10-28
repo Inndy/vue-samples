@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+
+<script src="vue.js"></script>
+
+<div id="app">
+  {{ email | censor }}
+</div>
+
+<script>
+Vue.filter('censor', function (val ){
+  var l = (val.length / 3)|0
+  return (val.substr(0, l) +
+          val.substr(l, l).replace(/./g, '*') +
+          val.substr(l*2))
+})
+
+new Vue({
+  el: '#app',
+  data: {
+    email: 'inndy.tw@gmail.com'
+  }
+})
+</script>
+
+</body>
+</html>
