@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<div id="app">
+  <label for="show1">
+    <input id="show1" type="checkbox" v-model="show1">
+    Switch 1
+  </label>
+  <label for="show2">
+    <input id="show2" type="checkbox" v-model="show2">
+    Switch 2
+  </label>
+  <div v-show="show1">Text 1</div>
+  <h1 class="t2" v-if="show2">Text 2</h1>
+  <p class="t3" v-else>Text 3</p>
+</div>
+<script src="vue.js"></script>
+<script>
+new Vue({
+  el: '#app',
+  data: { show1: true, show2: true }
+})
+</script>
+</body>
+</html>
