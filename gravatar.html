@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gravatar</title>
+  <link rel="stylesheet" href="gravatar.css" media="all">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>NTUOSC</h1>
+    </header>
+
+    <section>
+      <user v-for="current_user in users" :user="current_user">
+        {{current_user.intro}}
+      </user>
+    </section>
+  </div>
+
+  <template id="user">
+    <div class="user">
+      <gravatar :email="user.email"></gravatar>
+      <p class="name">{{user.name}}</p>
+      <p><slot></slot></p>
+    </div>
+  </template>
+
+  <template id="gravatar">
+    <div>
+      <img :src="url" :alt="email">
+    </div>
+  </template>
+
+  <script src="md5.min.js"></script>
+  <script src="vue.js"></script>
+  <script src="gravatar.js"></script>
+</body>
+</html>

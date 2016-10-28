@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TODO list</title>
+</head>
+<body>
+<div id="app">
+  <ul v-if="todo.length > 0">
+    <li v-for="(item, index) in todo">
+      {{item}}
+      <button @click="del(index)">X</button>
+    </li>
+  </ul>
+  <p v-else>You dont have any TODO!</p>
+
+  <div>
+    <input type="text" v-model="to_add">
+    <button @click="add(to_add)">Add</button>
+  </div>
+</div>
+
+<script src="vue.js"></script>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    todo: [ 'Vue.js', 'Hack the world' ],
+    to_add: ''
+  },
+  methods: {
+    add: function (item) { this.todo.push(item) },
+    del: function (idx) { this.todo.splice(idx, 1) }
+  }
+})
+</script>
+</body>
+</html>

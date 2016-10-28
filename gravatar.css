@@ -1,0 +1,27 @@
+body {
+  font-family: Helvetica, 'NotoSans CJK TC', sans-serif;
+  margin: 0;
+}
+
+header, section {
+  margin: 2em;
+}
+
+header h1 {
+  font-size: 3.2em;
+}
+
+.user {
+  display: inline-block;
+  background-color: #eee;
+  margin: .5em;
+  padding: 1em;
+}
+
+.user img {
+  padding: .3em;
+}
+
+.user .name {
+  text-align: center;
+}
